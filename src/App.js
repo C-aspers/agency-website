@@ -19,6 +19,7 @@ const App = () => {
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <GlobalStyles />
         <Navigation />
+        <br />
         <button onClick={() => themeToggler()}>Change theme</button>
         <Switch>
           <Route exact path="/" component={Home} />

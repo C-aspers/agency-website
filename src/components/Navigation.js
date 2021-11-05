@@ -1,33 +1,26 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import '../styles/Navigation.css'; // Tell webpack that Button.js uses these styles
+import "../styles/Navigation.css"; // Tell webpack that Button.js uses these styles
 
 const Navigation = () => {
   return (
     <div className="navigation">
-      <ul>
-        <NavLink to="/" exact className="hover" activeClassName="nav-active">
-          <li>Accueil</li>
-        </NavLink>
+      <NavLink to="/" exact className="navlist" activeClassName="nav-active">
+        Accueil
+      </NavLink>
 
-        <NavLink
-          to="/about"
-          exact
-          className="hover"
-          activeClassName="nav-active"
-        >
-          <li>À propos</li>
-        </NavLink>
-        
-        <NavLink
-          to="/works"
-          exact
-          className="hover"
-          activeClassName="nav-active"
-        >
-          <li>Projets</li>
-        </NavLink>
-      </ul>
+      <NavLink
+        to="/about"
+        exact
+        className="navlist"
+        activeClassName="nav-active"
+      >
+        À propos
+      </NavLink>
+
+      <NavLink to="/works" exact className="navlist" activeClassName="nav-active">
+        Projets
+      </NavLink>
     </div>
   );
 };

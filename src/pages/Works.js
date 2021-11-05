@@ -1,6 +1,11 @@
 import React from "react";
 //import Projects from "../components/Projects";
 import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Card from "react-bootstrap/Card";
 
 const Works = () => {
   const data = {
@@ -23,7 +28,7 @@ const Works = () => {
   };
 
   return (
-    <ul>
+    <Container>
       <br />
       <h1>Au fil des années, nous avons pu accompagner les meilleurs.</h1>
       <br />
@@ -32,15 +37,19 @@ const Works = () => {
         marques préférées.
       </p>
       <br />
-      {Object.entries(data).map(([slug, { title, description }]) => (
-        <li key={slug}>
-          <Link to={`/works/${slug}`}>
-            <h3>{slug}</h3>
-          </Link>
-          <p>{title}</p>
-        </li>
-      ))}
-    </ul>
+      <Row>
+        {Object.entries(data).map(([slug, { title, description }]) => (
+          <Col>
+            <Card key={slug} style={{ width: "18rem", height: "10rem", backgroundColor: "inherit" }}>
+              <Card.Body>
+                <Card.Title>{title}</Card.Title>
+                <Link to={`/works/${slug}`}>{slug}</Link>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 };
 
